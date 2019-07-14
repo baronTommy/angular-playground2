@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { Validators } from '@angular/forms';
+import {Router} from "@angular/router"
 
 interface InitValue {
   email: string
@@ -18,7 +19,10 @@ const initValue: InitValue = {
 export class MyFormComponent implements OnInit {
   fg: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ) {
     this.fb = new FormBuilder();
     this.createForm(initValue)
   }
@@ -27,15 +31,15 @@ export class MyFormComponent implements OnInit {
   }
 
   onSubmit() {
-
-    console.log(this.fg.controls.email.errors)
-
+    // console.log(this.fg.controls.email.errors)
     // console.log(this.fg.value)
     // console.log(this.fg.get('email'));
     // console.log(this.fg.value);
     // console.log(this.fg.errors);
     // console.log(this.f.dirty);
     // console.log(this.f.valid);
+    // this.fg.controls.email.setErrors({'xx': 'xxxx'})
+    this.router.navigate(['/'])
   }
 
   private createForm(v: InitValue) {
