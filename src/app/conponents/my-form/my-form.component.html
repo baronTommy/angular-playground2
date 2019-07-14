@@ -1,1 +1,31 @@
-モデル駆動フォーム
+<!--novalidateは自動付与-->
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+
+    <mat-form-field style="width: 300px">
+        <mat-label>メールあどれす入力してねー*</mat-label>
+
+        <input
+            matInput
+            name="email"
+            placeholder="めーるあどれす"
+            formControlName="email"
+        >
+
+        <mat-hint>foo@bar.hoge の形式でよろ</mat-hint>
+
+
+        <mat-error *ngIf="fg.controls.email.errors">
+            えらー {{fg.controls.email.errors | json}}
+        </mat-error>
+
+    </mat-form-field>
+            
+
+    <button
+        type="submit"
+        color="primary"
+        mat-raised-button
+        >登録
+    </button>
+
+</form>
