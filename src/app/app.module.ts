@@ -20,11 +20,15 @@ import {
   MatListModule,
   MatCheckboxModule
 } from '@angular/material';
+import { InputComponent } from './conponents/atoms/input/input.component';
+import { FormComponent } from './conponents/molecules/form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyFormComponent
+    MyFormComponent,
+    InputComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
