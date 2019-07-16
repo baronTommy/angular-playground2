@@ -1,0 +1,13 @@
+<form [formGroup]="fg" (ngSubmit) = "onSubmit()">
+
+    <app-input2 formControlName="xxx"></app-input2>
+
+
+    <app-input2 formControlName="yyy"></app-input2>
+
+    <mat-error *ngIf="fg.controls.yyy.errors">
+        えらー {{fg.controls.yyy.errors | json}}
+    </mat-error>
+
+    <button type="submit">submit</button>
+</form>

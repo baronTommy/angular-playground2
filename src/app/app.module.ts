@@ -22,13 +22,17 @@ import {
 } from '@angular/material';
 import { InputComponent } from './conponents/atoms/input/input.component';
 import { FormComponent } from './conponents/molecules/form/form.component';
+import { Form2Component } from './conponents/molecules/form2/form2.component';
+import { Input2Component } from './conponents/atoms/input2/input2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyFormComponent,
     InputComponent,
-    FormComponent
+    FormComponent,
+    Form2Component,
+    Input2Component
   ],
   imports: [
     BrowserModule,
