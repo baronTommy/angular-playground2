@@ -9,10 +9,8 @@ import { Validators } from '@angular/forms';
 })
 export class FormComponent implements OnInit {
 
-  public nestedForm: FormGroup = new FormGroup({
+  public nestedForm = new FormGroup({
     userName: new FormControl(''),
-    // friendName: new FormControl(""),
-    // email: new FormControl("")
   });
 
   constructor() { }
@@ -25,3 +23,5 @@ export class FormComponent implements OnInit {
     console.log("Val", this.nestedForm.value);
   }
 }
+
+// たぶんバリデートがうまくいかない
