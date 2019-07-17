@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import {Router} from "@angular/router"
+import { HttpClientService } from '../../service/http-client.service';
 
 interface InitValue {
   email: string
@@ -21,13 +22,20 @@ export class MyFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private httpClientService: HttpClientService
   ) {
     this.fb = new FormBuilder();
     this.createForm(initValue)
   }
 
   ngOnInit() {
+    this.httpClientService.getUsers()
+      // .subscribe(console.log)
+      .subscribe(
+        r => console.log('ok'),
+        e => console.log('ng')
+      )
   }
 
   onSubmit() {
