@@ -3,7 +3,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, filter } from 'rxjs/operators';
 import { Observable, throwError, OperatorFunction } from 'rxjs';
 
-
 // --------------------------------------------
 interface User {
   id: number
