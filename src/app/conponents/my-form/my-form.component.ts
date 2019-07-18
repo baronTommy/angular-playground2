@@ -31,11 +31,29 @@ export class MyFormComponent implements OnInit {
 
   ngOnInit() {
     this.httpClientService.getUsers()
-      // .subscribe(console.log)
+
+      // subscribe することで値が流れる
       .subscribe(
-        r => console.log('ok'),
-        e => console.log('ng')
+        // onNext
+        // 新しい値が流れてきたときに
+        r => {
+
+          console.log({r})
+
+          console.log('ok')
+        },
+
+        // onError
+        // ストリームの途中でエラーが発生したときに
+        e => console.log('ng'),
+        
+        // onComplete
+        // 全ての値が流れきってストリームが終了した時に finaly とは違う
+        () => console.log('complete')
       )
+
+
+
   }
 
   onSubmit() {
